@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up JDK 11
         uses: actions/setup-java@v3
@@ -22,5 +23,14 @@ jobs:
       - name: Grant execute permission for Gradle
         run: chmod +x gradlew
 
-      - name: Build with Gradle
+      - name: Download SUT
+        run: |
+          curl -L -o app-mbank.jar https://github.com/netology-code/at-homeworks/raw/master/files/app-mbank.jar
+
+      - name: Run SUT
+        run: |
+          nohup java -jar app-mbank.jar &
+          sleep 5
+
+      - name: Run tests
         run: ./gradlew test
