@@ -1,0 +1,1 @@
+[![Java CI](https://github.com/playmarketdk-pixel/AT_HW2_API-CI_DK/actions/workflows/ci.yml/badge.svg)](https://github.com/playmarketdk-pixel/AT_HW2_API-CI_DK/actions/workflows/ci.yml)
