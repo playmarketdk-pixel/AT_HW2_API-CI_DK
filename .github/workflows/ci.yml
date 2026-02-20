@@ -29,8 +29,8 @@ jobs:
 
       - name: Run SUT
         run: |
-          nohup java -jar app-mbank.jar &
-          sleep 5
+          nohup java -jar ./artifacts/app-mbank.jar &
+          sleep 15
 
       - name: Run tests
         run: ./gradlew test
